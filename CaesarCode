@@ -38,7 +38,12 @@ import javafx.stage.Stage;
         
         // Metoda për të verifikuar nëse vlera e shiftit është e vlefshme (është numër mes 1 dhe 26)
          private boolean isValidShift(String shiftText) {
-         
+            try {
+                int shift = Integer.parseInt(shiftText);
+                return shift >= 1 && shift <= 26;
+            } catch (NumberFormatException e) {
+                return false;
+            }
          }
          
           public static void main(String[] args) {
