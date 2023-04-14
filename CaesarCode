@@ -16,6 +16,23 @@ import javafx.stage.Stage;
         public void start(Stage primaryStage) {
         
         }
+        // Metoda për enkriptimin e kodit të Cezarit
+        private String encrypt(String input, int shift) {
         
+        }
+        
+        // Metoda për dekriptimin e kodit të Cezarit
+        private String decrypt(String input, int shift) {
+        
+        }
+        
+        // Metoda për të verifikuar nëse vlera e shiftit është e vlefshme (është numër mes 1 dhe 26)
+         private boolean isValidShift(String shiftText) {
+         
+         }
+         
+          public static void main(String[] args) {
+            launch(args);
+        }
         
 }
