@@ -18,8 +18,18 @@ import javafx.stage.Stage;
         }
         // Metoda për enkriptimin e kodit të Cezarit
         private String encrypt(String input, int shift) {
-        
+        StringBuilder result = new StringBuilder();
+        for (char c : input.toCharArray()) {
+            if (Character.isLetter(c)) {
+                char base = Character.isLowerCase(c) ? 'a' : 'A';
+                c = (char) (base + (c - base + shift) % 26);
+            }
+            result.append(c);
         }
+        return result.toString();
+    }
+        
+        
         
         // Metoda për dekriptimin e kodit të Cezarit
         private String decrypt(String input, int shift) {
