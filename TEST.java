@@ -8,6 +8,7 @@ public class TEST {
                 c = (char) (base + (c - base + shift) % 26);
             }
             result.append(c);
+            //test
         }
         return result.toString();
     }
