@@ -48,7 +48,20 @@ import javafx.stage.Stage;
                     outputTextArea.setText("Gabim: Shift-i duhet të jetë një numër mes 1 dhe 26");
                 }
             });
+            
+            VBox vbox = new VBox(10);
+            vbox.setAlignment(Pos.CENTER);
+            vbox.getChildren().addAll(new Label("Teksti i hyrjes:"), inputTextArea,
+                    new Label("Teksti i daljes:"), outputTextArea,
+                    new Label("Shift:"), shiftTextField, // Shtojmë Label-in për "Shift" dhe TextField-in për vlerën e shiftit
+                    encryptButton, decryptButton);
+
+            Scene scene = new Scene(vbox, 400, 300);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Kodi i Cezarit");
+            primaryStage.show();
         }
+
         // Metoda për enkriptimin e kodit të Cezarit
         private String encrypt(String input, int shift) {
         StringBuilder result = new StringBuilder();
