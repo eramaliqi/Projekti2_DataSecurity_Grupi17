@@ -55,9 +55,17 @@ import javafx.stage.Stage;
         
         
         // Metoda për dekriptimin e kodit të Cezarit
-        private String decrypt(String input, int shift) {
-        
-        }
+         private String decrypt(String input, int shift) {
+                    StringBuilder result = new StringBuilder();
+                    for (char c : input.toCharArray()) {
+                        if (Character.isLetter(c)) {
+                            char base = Character.isLowerCase(c) ? 'a' : 'A';
+                            c = (char) (base + (c - base - shift + 26) % 26);
+                        }
+                        result.append(c);
+                    }
+                    return result.toString();
+                }
         
         // Metoda për të verifikuar nëse vlera e shiftit është e vlefshme (është numër mes 1 dhe 26)
          private boolean isValidShift(String shiftText) {
