@@ -14,6 +14,17 @@ import javafx.stage.Stage;
       
         @Override
         public void start(Stage primaryStage) {
+        TextArea inputTextArea = new TextArea();
+                inputTextArea.setPrefRowCount(10);
+                inputTextArea.setWrapText(true);
+
+                TextArea outputTextArea = new TextArea();
+                outputTextArea.setPrefRowCount(10);
+                outputTextArea.setWrapText(true);
+                outputTextArea.setEditable(false);
+
+                TextField shiftTextField = new TextField();
+                shiftTextField.setText(String.valueOf(shift)); // Vendosim vlerën e shiftit në TextField
         
         Button encryptButton = new Button("Enkripto");
             encryptButton.setOnAction(e -> {
