@@ -27,6 +27,17 @@ import javafx.stage.Stage;
                 }
             });
         
+        Button decryptButton = new Button("Dekripto");
+            decryptButton.setOnAction(e -> {
+                String inputText = inputTextArea.getText();
+                if (isValidShift(shiftTextField.getText())) {
+                    shift = Integer.parseInt(shiftTextField.getText()); // Merrim vlerën e shiftit nga TextField
+                    String decryptedText = decrypt(inputText, shift);
+                    outputTextArea.setText(decryptedText);
+                } else {
+                    outputTextArea.setText("Gabim: Shift-i duhet të jetë një numër mes 1 dhe 26");
+                }
+            });
         }
         // Metoda për enkriptimin e kodit të Cezarit
         private String encrypt(String input, int shift) {
