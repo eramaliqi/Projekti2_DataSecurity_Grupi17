@@ -15,6 +15,18 @@ import javafx.stage.Stage;
         @Override
         public void start(Stage primaryStage) {
         
+        Button encryptButton = new Button("Enkripto");
+            encryptButton.setOnAction(e -> {
+                String inputText = inputTextArea.getText();
+                if (isValidShift(shiftTextField.getText())) {
+                    shift = Integer.parseInt(shiftTextField.getText()); // Merrim vlerën e shiftit nga TextField
+                    String encryptedText = encrypt(inputText, shift);
+                    outputTextArea.setText(encryptedText);
+                } else {
+                    outputTextArea.setText("Gabim: Shift-i duhet të jetë një numër mes 1 dhe 26");
+                }
+            });
+        
         }
         // Metoda për enkriptimin e kodit të Cezarit
         private String encrypt(String input, int shift) {
