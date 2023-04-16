@@ -11,6 +11,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
     public class CaesarCode extends Application {
+    
+        private int shift = 3; // Ndryshimi për kodin e Cezarit
       
         @Override
         public void start(Stage primaryStage) {
