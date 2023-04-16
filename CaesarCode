@@ -25,6 +25,7 @@ import javafx.stage.Stage;
 
                 TextField shiftTextField = new TextField();
                 shiftTextField.setText(String.valueOf(shift)); // Vendosim vlerën e shiftit në TextField
+                
         Button encryptButton = new Button("Enkripto");
             encryptButton.setOnAction(e -> {
                 String inputText = inputTextArea.getText();
@@ -74,8 +75,6 @@ import javafx.stage.Stage;
         }
         return result.toString();
     }
-        
-        
         
         // Metoda për dekriptimin e kodit të Cezarit
          private String decrypt(String input, int shift) {
